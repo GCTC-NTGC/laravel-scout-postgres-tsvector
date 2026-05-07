@@ -14,10 +14,9 @@ jobs:
             fail-fast: true
             matrix:
                 php: [8.3, 8.4]
-                laravel: [^11, ^12, ^13]
-                scout: [^11, ^12, ^13]
+                laravel: [^12, ^13]
 
-        name: Test PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }} - Scout ${{ matrix.scout }}
+        name: Test PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }}
 
         steps:
             - name: Checkout code
@@ -40,7 +39,7 @@ jobs:
                   composer require "illuminate/contracts=${{ matrix.laravel }}" --no-update
                   composer require "illuminate/database=${{ matrix.laravel }}" --no-update
                   composer require "illuminate/support=${{ matrix.laravel }}" --no-update
-                  composer require "laravel/scout=${{ matrix.scout }}" --no-update
+                  composer require "laravel/scout=${{ matrix.laravel }}" --no-update
                   composer update --prefer-dist --no-interaction --no-progress
 
             - name: Run tests
