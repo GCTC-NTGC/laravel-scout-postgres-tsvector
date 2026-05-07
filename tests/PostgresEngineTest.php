@@ -125,8 +125,8 @@ class PostgresEngineTest extends TestCase
 
         $table->shouldReceive('skip')->with($skip)->andReturnSelf()
             ->shouldReceive('limit')->with($limit)->andReturnSelf()
-            ->shouldReceive('where')->with('bar', 1)->andReturnSelf()
-            ->shouldReceive('where')->with('baz', 'qux')
+            ->shouldReceive('where')->with('bar', '=', 1)->andReturnSelf()
+            ->shouldReceive('where')->with('baz', '=', 'qux')
             ->shouldReceive('getBindings')->andReturn([null, 'foo', 1, 'qux']);
 
         $db->shouldReceive('select')
@@ -174,8 +174,8 @@ class PostgresEngineTest extends TestCase
 
         $table->shouldReceive('skip')->with($skip)->andReturnSelf()
             ->shouldReceive('limit')->with($limit)->andReturnSelf()
-            ->shouldReceive('where')->with('bar', 1)->andReturnSelf()
-            ->shouldReceive('where')->with('baz', 'qux')
+            ->shouldReceive('where')->with('bar', '=', 1)->andReturnSelf()
+            ->shouldReceive('where')->with('baz', '=', 'qux')
             ->shouldReceive('getBindings')->andReturn([null, 'foo', 1, 'qux']);
 
         $db->shouldReceive('select')
@@ -247,7 +247,7 @@ class PostgresEngineTest extends TestCase
 
         $table->shouldReceive('skip')->with($skip)->andReturnSelf()
             ->shouldReceive('limit')->with($limit)->andReturnSelf()
-            ->shouldReceive('where')->with('bar', 1)
+            ->shouldReceive('where')->with('bar', '=', 1)
             ->shouldReceive('getBindings')->andReturn(['simple', 'foo', 1]);
 
         $db->shouldReceive('select')->with(null, $table->getBindings())->once();
@@ -269,7 +269,7 @@ class PostgresEngineTest extends TestCase
 
         $table->shouldReceive('skip')->with($skip)->andReturnSelf()
             ->shouldReceive('limit')->with($limit)->andReturnSelf()
-            ->shouldReceive('where')->with('bar', 1)
+            ->shouldReceive('where')->with('bar', '=', 1)
             ->shouldReceive('getBindings')->andReturn(['english', 'foo', 1]);
 
         $db->shouldReceive('select')->with(null, $table->getBindings())->once();
@@ -292,7 +292,7 @@ class PostgresEngineTest extends TestCase
 
         $table->shouldReceive('skip')->with(0)->andReturnSelf()
             ->shouldReceive('limit')->with(5)->andReturnSelf()
-            ->shouldReceive('where')->with('bar', 1)->andReturnSelf()
+            ->shouldReceive('where')->with('bar', '=', 1)->andReturnSelf()
             ->shouldReceive('whereNull')->with('deleted_at')
             ->shouldReceive('getBindings')->andReturn([null, 'foo', 1]);
 
