@@ -32,7 +32,7 @@
         "illuminate/contracts": "^12|^13",
         "illuminate/database": "^12|^13",
         "illuminate/support": "^12|^13",
-        "laravel/scout": "^10|^11"
+        "laravel/scout": "^11"
     },
     "require-dev": {
         "larastan/larastan": "^3.3",

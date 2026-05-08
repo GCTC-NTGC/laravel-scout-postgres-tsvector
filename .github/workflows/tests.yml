@@ -15,7 +15,7 @@ jobs:
             matrix:
                 php: [8.3, 8.4, 8.5]
                 laravel: [^12, ^13]
-                scout: [^10, ^11]
+                scout: [^11]
 
         name: Test PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }} - Scout ${{ matrix.scout }}
 
