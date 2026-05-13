@@ -34,11 +34,11 @@ class PostgresEngineServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->app->make(EngineManager::class)->extend('pgsql', function () {
+        $this->app->make(EngineManager::class)->extend('pgsql', function ($app) {
             /** @var \Illuminate\Database\ConnectionResolverInterface $db */
-            $db = $this->app->get('db');
+            $db = $app->get('db');
             /** @var \Illuminate\Support\Facades\Config $config */
-            $config = $this->app->get('config');
+            $config = $app->get('config');
             /** @var array<string, mixed> $pgScoutConfig */
             $pgScoutConfig = $config->get('scout.pgsql', []);
 
