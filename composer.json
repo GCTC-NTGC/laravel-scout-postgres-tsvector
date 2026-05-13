@@ -1,5 +1,5 @@
 {
-    "name": "gctc-ntgc/laravel-scout-postgres-tsvector",
+    "name": "devnoiseconsulting/laravel-scout-postgres-tsvector",
     "description": "PostgreSQL Full Text Search Driver for Laravel Scout",
     "keywords": [
         "laravel",
